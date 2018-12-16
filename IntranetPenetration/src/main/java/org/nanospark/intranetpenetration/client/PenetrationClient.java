@@ -49,6 +49,7 @@ public class PenetrationClient implements AutoCloseable {
     public static void main(String[] args) {
         String hostname = "47.106.230.145";
         int port = Integer.valueOf(args[0]);
+        Logger.info("start listening");
         try (PenetrationClient client = new PenetrationClient(hostname, port)) {
             client.listen();
             Socket socket = client.getSocket();
